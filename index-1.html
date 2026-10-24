@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hollow Pine – Dark-sky cabins</title>
+<meta name="description" content="Three off-grid cabins with no light pollution. Scrub through a night at Hollow Pine and book your stay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="hero" id="top">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <header class="bar">
+    <a class="brand" href="#top">Hollow Pine</a>
+    <nav aria-label="Main"><a href="#cabins">Cabins</a><a href="#dark">The dark</a><a href="#faq">FAQ</a><a class="pill" href="#book">Book</a></nav>
+  </header>
+  <div class="hero-copy">
+    <h1>Come for the dark.</h1>
+    <p>Three cabins, no streetlights for 30&nbsp;km, and a sky that does the entertaining.</p>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 170C150 110 280 150 420 120S700 60 860 110s240 40 340-20V300H0z" fill="#0f1f1b"/>
+    <path d="M0 230C200 190 330 240 520 210s420-70 680 0V300H0z" fill="#0a1512"/>
+  </svg>
+  <svg class="cabin" viewBox="0 0 160 110" aria-hidden="true">
+    <path d="M10 60 80 10l70 50v50H10z" fill="#06100d"/>
+    <rect id="win" x="62" y="62" width="30" height="24" rx="2"/>
+  </svg>
+  <div class="timer">
+    <label for="time">A night at Hollow Pine <output id="clock" for="time">19:30</output></label>
+    <input id="time" type="range" min="0" max="600" step="5" value="0">
+    <p id="cap" aria-live="polite"></p>
+  </div>
+</section>
+
+<main>
+  <section id="cabins" class="wrap">
+    <h2>Three cabins, one rule: look up</h2>
+    <ul class="rooms">
+      <li><div><h3>Fern</h3><p>A one-room cabin with a skylight above the bed. Sleeps 2.</p></div><p class="rate">$140<span> / night</span></p></li>
+      <li><div><h3>Larch</h3><p>Loft bedroom, wood stove and a deck facing south. Sleeps 4.</p></div><p class="rate">$210<span> / night</span></p></li>
+      <li><div><h3>Spruce</h3><p>Two bedrooms, a long table and a telescope shelf. Sleeps 6.</p></div><p class="rate">$320<span> / night</span></p></li>
+    </ul>
+  </section>
+
+  <section id="dark" class="band">
+    <div class="wrap">
+      <h2>What the dark gives you</h2>
+      <dl class="facts">
+        <div><dt>30 km</dt><dd>to the nearest town lights, so the Milky Way casts faint shadows.</dd></div>
+        <div><dt>0 screens</dt><dd>in the cabins. Wi-Fi is in the lodge if you really need it.</dd></div>
+        <div><dt>Red lanterns</dt><dd>on every path, so your eyes stay adjusted all night.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="book" class="wrap booking">
+    <div>
+      <h2>Plan your stay</h2>
+      <p>Pick your dates and see the total before you send a request. We reply within one day.</p>
+    </div>
+    <form id="form" novalidate>
+      <label>Cabin
+        <select id="cabin">
+          <option value="Fern" data-rate="140" data-cap="2">Fern, up to 2 guests</option>
+          <option value="Larch" data-rate="210" data-cap="4">Larch, up to 4 guests</option>
+          <option value="Spruce" data-rate="320" data-cap="6">Spruce, up to 6 guests</option>
+        </select>
+      </label>
+      <div class="two">
+        <label>Check in<input type="date" id="in" required></label>
+        <label>Check out<input type="date" id="outd" required></label>
+      </div>
+      <label>Guests<input type="number" id="guests" min="1" max="6" value="2" required></label>
+      <p id="total" class="total" aria-live="polite">Choose your dates to see the total.</p>
+      <button class="btn" type="submit">Send request</button>
+      <p id="msg" class="msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section id="faq" class="wrap faq">
+    <h2>Questions</h2>
+    <details><summary>When is the best time to see the Milky Way?</summary><p>Clear, moonless nights from late spring to early autumn. Check the moon phase before you book.</p></details>
+    <details><summary>Is there heating?</summary><p>Yes. Every cabin has a wood stove, and we leave the first night of wood stacked.</p></details>
+    <details><summary>Can I bring a telescope?</summary><p>Please do. Spruce has a shelf made for one, and the lodge lends a basic pair of binoculars.</p></details>
+    <details><summary>What if it is cloudy?</summary><p>You can move your dates once, free of charge, up to 48 hours before check in.</p></details>
+  </section>
+</main>
+
+<footer class="foot"><p>&copy; 2026 Hollow Pine. A fictional student project.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+:root{--pine:#1f3b33;--frost:#edf1f5;--lamp:#ffb454;--night:#0b1230;--sky-top:#2f4a7c;--sky-bot:#f2a65a;--glow:0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:1.0625rem/1.6 Karla,system-ui,sans-serif;color:var(--pine);background:var(--frost)}
+h1,h2,h3,.brand,dt,.rate{font-family:"Familjen Grotesk",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 1.5rem}
+h3{font-size:1.4rem;margin:0 0 .25rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+
+.hero{position:relative;min-height:100svh;min-height:640px;display:flex;flex-direction:column;overflow:hidden;color:#fff;background:linear-gradient(var(--sky-top),var(--sky-bot))}
+#stars{position:absolute;inset:0;width:100%;height:100%}
+.bar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,5vw,3rem)}
+.brand{font-weight:700;font-size:1.4rem;text-decoration:none}
+nav{display:flex;gap:1.25rem;align-items:center}
+nav a{text-decoration:none}
+nav a:not(.pill):hover{text-decoration:underline}
+.pill{background:var(--lamp);color:#1a1205;padding:.4rem 1.1rem;border-radius:999px;font-weight:500}
+.hero-copy{position:relative;z-index:2;padding:clamp(1.5rem,6vh,4rem) clamp(1rem,5vw,3rem) 0;max-width:46rem}
+h1{font-size:clamp(3rem,9vw,6.5rem);font-weight:700;margin:0 0 1rem}
+.hero-copy p{font-size:1.25rem;max-width:30rem;margin:0}
+.hills{position:absolute;left:0;bottom:0;width:100%;height:42%;z-index:1}
+.cabin{position:absolute;right:clamp(1rem,10vw,9rem);bottom:6%;width:clamp(110px,16vw,190px);z-index:1}
+#win{fill:var(--lamp);opacity:var(--glow);filter:drop-shadow(0 0 10px var(--lamp))}
+.timer{position:relative;z-index:3;margin:auto clamp(1rem,5vw,3rem) clamp(1rem,4vh,2.5rem);max-width:34rem;padding:1rem 1.25rem;border-radius:16px;background:rgba(7,11,31,.62);backdrop-filter:blur(8px)}
+.timer label{display:flex;justify-content:space-between;font-weight:500}
+output{font-family:"Familjen Grotesk",sans-serif;font-weight:700;font-size:1.4rem}
+input[type=range]{width:100%;height:2rem;accent-color:var(--lamp);cursor:pointer}
+#cap{margin:.25rem 0 0;min-height:3.2em}
+
+.wrap{max-width:1000px;margin:0 auto;padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,3rem)}
+.rooms{list-style:none;margin:0;padding:0}
+.rooms li{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.5rem 0;border-top:2px solid var(--pine)}
+.rooms li:last-child{border-bottom:2px solid var(--pine)}
+.rooms p{margin:0}
+.rate{font-size:2rem;font-weight:700;white-space:nowrap}
+.rate span{font:400 1rem Karla,sans-serif}
+
+.band{background:var(--pine);color:var(--frost)}
+.band .wrap{padding-top:clamp(3rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin:0}
+.facts dt{font-size:2.4rem;font-weight:700;color:var(--lamp)}
+.facts dd{margin:.25rem 0 0}
+
+.booking{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:start}
+form{background:#fff;padding:1.5rem;border-radius:16px;border:1px solid rgba(31,59,51,.15);display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-weight:500}
+input,select{font:inherit;padding:.65rem .75rem;border:1.5px solid rgba(31,59,51,.4);border-radius:8px;background:#fff;color:inherit}
+input[aria-invalid=true]{border-color:#b3261e}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.total{margin:0;font-weight:500}
+.btn{font:inherit;font-weight:700;background:var(--pine);color:#fff;border:0;padding:.85rem 1.5rem;border-radius:999px;cursor:pointer}
+.btn:hover{background:#2c5247}
+.msg{margin:0;min-height:1.6em}
+.msg.err{color:#b3261e}
+
+.faq details{border-top:1px solid rgba(31,59,51,.3);padding:1rem 0}
+.faq details:last-child{border-bottom:1px solid rgba(31,59,51,.3)}
+summary{cursor:pointer;font-weight:500}
+details p{margin:.6rem 0 0;max-width:40rem}
+.foot{text-align:center;padding:2rem 1rem;font-size:.95rem;opacity:.8}
+
+@media (max-width:760px){
+  nav a:not(.pill){display:none}
+  .facts,.booking{grid-template-columns:1fr}
+  .rooms li{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .cabin{bottom:30%;right:1rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
